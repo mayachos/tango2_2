@@ -6,14 +6,35 @@
 //
 
 import UIKit
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let config = Realm.Configuration(schemaVersion: 1,migrationBlock: nil,deleteRealmIfMigrationNeeded: true)
+        
+        Realm.Configuration.defaultConfiguration = config
+        
+        /////////////////////////////////////
+        
+//        let realm = try! Realm()
+//        try! realm.write {
+//            realm.deleteAll()
+//        }
+//
+//        let newMemo = Memo()
+//        newMemo.tango = "apple"
+//        newMemo.imi = "りんご"
+//
+//        try! realm.write {
+//            realm.add(newMemo)
+//        }
+        
+        ////////////////////////////////////
+        
         return true
     }
 
